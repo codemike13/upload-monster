@@ -1,0 +1,11 @@
+.open{
+    background-image: url("/f22427b0-98cc-47a7-91bf-3d787720089d.jpg");
+background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.fullView {
+        width:100vw;
+        height: 100vh
+    }
