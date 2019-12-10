@@ -1,17 +1,25 @@
 import React, { Component } from 'react'
+import { DropTarget } from 'react-drag-drop-container';
 
-import './monster.css'
+import '../../index.css';
+
 class Monster extends Component {
 
+    consume(e) {
+        e.containerElem.style.display = 'none';
+    }
 
     render() {
         return (
-            <div className="fullView open">
 
-                <form >
 
-                </form>
-            </div>
+
+            <DropTarget targetKey="file" onHit={this.consume} >
+                <div className={"monster"}>
+
+                </div>
+
+            </DropTarget>
         )
     }
 }

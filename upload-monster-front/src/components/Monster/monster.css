@@ -1,11 +1,8 @@
 .open{
-    background-image: url("/f22427b0-98cc-47a7-91bf-3d787720089d.jpg");
+    background-image: url("/MonsterHandsDown.png");
 background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    height: 75vh;
+    background-color: darkblue;
 }
-
-.fullView {
-        width:100vw;
-        height: 100vh
-    }
