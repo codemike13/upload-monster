@@ -1,19 +1,17 @@
 import React, { Component } from 'react';
-import TransitionGroup from 'react-addons-transition-group';
-import ReactGridLayout from 'react-grid-layout'
+import ResizePanel from "react-resize-panel";
+import Drawer from 'react-drag-drawer'
+import DropZone from '../DropZone/DropZone'
+
 import { Rnd } from 'react-rnd'
 import '../../index.css';
-import File from '../../components/UploadFile/file'
+
 
 
 export default class FoodBox extends Component {
 
     state = {
-        openBox: false,
-        width: "100%",
-        height: 150,
-        x: 0,
-        y: 0
+        openBox: false
     }
 
     openBox = () => {
@@ -22,33 +20,63 @@ export default class FoodBox extends Component {
         })
     }
 
+    toggle = (type, value) => event => {
+        this.setState(state => {
+            return {
+                [type]: value
+            };
+        });
+    };
+
 
     render() {
 
+        const {
+            openBox
+        } = this.state;
+
 
         return (
+            <>
+                <div onClick={this.toggle("openBox", true)}> Click </div>
+                <Drawer
+                    containerOpacity={0.9}
+                    open={openBox}
+                    onRequestClose={this.toggle("openBox", false)}
+                    direction={'bottom'}
+                >
+                    <div className={'fileUpload'}>
+                        I'm in a drawer!
+            <button onClick={this.toggle("openBox", false)}>
+                            Close drawer
+            </button>
+                    </div>
+                </Drawer>
 
-
-
-            <div className={'fileUpload'} draggable>
-                <Rnd>
-                    rnd
-                </Rnd>
-            </div>
-
+            </>
         )
     }
 }
 
 
-const styles = {
-    container: {
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        border: '1px solid black',
-    }
-}
+// const styles = {
+//     container: {
+//         display: "flex",
+//         alignItems: "center",
+//         justifyContent: "center",
+//         border: '1px solid black',
+//     },
+//     card: {
+//         height: '200px',
+//         width: '200px',
+//         alignItems: "center",
+//         justifyContent: "center",
+//         border: '1px solid black',
+//         margin: '40px auto;'
+
+//     }
+// }
+
 
 
 

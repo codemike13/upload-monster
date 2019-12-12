@@ -27,9 +27,9 @@ export default class DropZone extends Component {
 
         return (
             <>
-
-                <div className={'dropZone'}>
-                    <File></File>
+                <div className={'fileSelect'}>here</div>
+                <div id="dropzone" className={'dropZone'}>
+                    {/* <File></File> */}
                 </div>
 
             </>
@@ -38,11 +38,11 @@ export default class DropZone extends Component {
 }
 
 
-const styles = {
-    container: {
-        flex: 1,
-        backgroundColor: 'white',
-        alignItems: 'center',
-        justifyContent: 'center'
-    }
-}
+// const styles = {
+//     container: {
+//         flex: 1,
+//         backgroundColor: 'white',
+//         alignItems: 'center',
+//         justifyContent: 'center'
+//     }
+// }
