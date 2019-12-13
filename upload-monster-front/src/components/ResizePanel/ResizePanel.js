@@ -16,7 +16,7 @@ class ResizePanel extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            size: 500,
+            size: 480,
             openLid: false
         }
 
@@ -91,17 +91,18 @@ class ResizePanel extends Component {
                     <div key="content"
                         ref="content"
                         className={"ResizeContentVertical"}
-                        style={{ height: this.state.size + 'px' }}
+                        style={{ height: (this.state.size) + 'px' }}
 
                     >
                         {React.Children.only(this.props.children)}
+                        <DraggableCore key="handle" {...dragHandlers}>
+                            <div className={"ResizeBarVertical"}>
+                                <img className={'monsterImg'} src={'/hands.png'} alt=""></img>
+                                <img src={'/slide.png'} className={'slideImg'} alt='' ></img>
+                            </div>
+                        </DraggableCore>
                     </div>
 
-                    <DraggableCore key="handle" {...dragHandlers}>
-                        <div className={"ResizeBarVertical"}>
-                            <img src='/slide.png' className={'slideImg'} alt='' ></img>
-                        </div>
-                    </DraggableCore>
                 </div>
             </PanelSize.Provider>
         );

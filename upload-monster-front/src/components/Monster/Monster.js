@@ -39,7 +39,6 @@ class Monster extends Component {
     render() {
 
 
-        const { value, onChangeValue } = this.props;
 
         return (
 
@@ -52,10 +51,15 @@ class Monster extends Component {
                             onChange={this.update("panelSize", this.props.size)}
                         >
                             {(value) => (
-                                < div className={'div2'}>
+                                <>
 
-                                </div>
+                                    < div
+                                        style={{ backgroundImage: (value <= 410 ? 'url("/mouthOpen.png")' : 'url("/HandsDown.png")') }}
+                                        className={'div2'}>
 
+                                    </div>
+
+                                </>
                             )}
                         </PanelSize.Consumer>
                     </div>

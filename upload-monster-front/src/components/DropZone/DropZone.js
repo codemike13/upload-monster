@@ -27,7 +27,12 @@ export default class DropZone extends Component {
 
         return (
             <>
-                <div className={'fileSelect'}>here</div>
+                <div className={'fileSelect'}>
+                    <form action="fileupload" method="post" enctype="multipart/form-data">
+                        <input type="file" name="fileToUpload" />
+                        <input type="submit"></input>
+                    </form>
+                </div>
                 <div id="dropzone" className={'dropZone'}>
                     {/* <File></File> */}
                 </div>
